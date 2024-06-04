@@ -1,0 +1,7 @@
+Node -> Value, leftNode, rightNode
+full -> If atleast one parent should have all leaf nodes 
+perfect -> All leaf node should be there 
+complete -> If atleast one leaf / child is connected to parent
+
+siblings -> child at same order
+leaf -> child at last order 

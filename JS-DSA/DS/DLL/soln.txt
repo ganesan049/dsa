@@ -1,0 +1,26 @@
+isPalindrome: 1,2,1 => true, 1,2,3 => false
+    while(this.head != null and this.tail != null)
+        if(this.head.value != this.tail.value)
+            return false
+        this.head = this.head.next;
+        this.tail = this.tail.next;
+    return true;
+
+swapPairs: 1,2,3,4 => 2,1,4,3 , 1,2,3,4,5 => 2,1,4,3,5
+    dummy = Node(0); // Assigning to dummy Node next with current node for simplify manipulation of pointers
+    dummy.next = this.head;
+    prev = dummy;
+    curr = dummy.next;
+    while(curr != null and curr.next != null) // curr should not be null if even curr will go to null because of two jumps and last next to handle odd length there'll be no next pair
+        currNext = curr.next
+        nextCurr = currNext.next
+
+        curr.next = currNext.next 
+        curr.prev = currNext
+        currNext.prev = pre 
+        currNext.next = curr
+
+        prev = curr
+        curr = nextCurr
+    this.head = dummy.next
+    this.head.prev = null

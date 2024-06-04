@@ -1,0 +1,36 @@
+BinaryToDecimal: 1011 => 11 , 1 => 1, empty => 0
+// Multiply the current sum by 2 and add the value at each NodeClass to get the decimal number.  
+    binaryToDecimal() {
+        let result = 0;
+        let temp = this.head;
+        while (temp != null) {
+            result = ((result * 2) + temp.value)
+            temp = temp.next;
+        }
+        return result;
+    }
+
+Find Middle value: 12345 => 3, 12 => 1
+// Approach tortoise and Hare, tortoise will go one step and Hare two step. If the Hare current and next position is null return tortoise
+    tortoise = this.head
+    hare = this.head
+    while(hare != null and hare.next != null)
+        tortoise = tortoise.next;
+        hare = hare.next.next;
+
+Find Nth node from last: 123456, k->2 result => 5
+// Approach assign fast to the k position from start
+    fast = this.head
+    for(i=0;i<k;i++){
+        if(fast == null){ // if k is beyond the length of list
+            return null;
+        }
+        fast = fast.next;
+    }
+    slow = this.head;
+    if(fast == null) // for k == length i.e 6 return 1
+        return slow;
+    while(fast.next !=null)
+        fast = fast.next
+        slow = slow.next
+    return slow.next

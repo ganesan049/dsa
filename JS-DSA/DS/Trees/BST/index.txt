@@ -1,0 +1,10 @@
+
+BST:
+First element will be node and subsequent elements lesser than node will be on left and greater than node will be on right
+
+Bigo - 
+lookup O(logn) since we're not looking to the other half from node 
+lookup O(n) for worst case which similar to LinkedList 1 -> 2 -> 3 -> 4
+remove O(logn)
+delete O(logn)
+insert O(logn)

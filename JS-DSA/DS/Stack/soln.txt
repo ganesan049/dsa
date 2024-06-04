@@ -1,0 +1,21 @@
+IsBlancedPranthesis:    (()) => true, ()) => false
+    if "(" 
+        Push into stack 
+    else if == ")"
+        stack!= empty and pop from stack value == "(" // instead of pushing the ")" always the close prev will "(" so pop from stack and check it's open or return false  
+        else 
+            return false;
+    return stack.empty()
+
+Sort stack: [5, 3, 1, 4, 2] => [5, 4, 3, 2, 1]
+    using tempStack which will holds values in asc order i.e less value when compared to input stack
+    while !stack.isEmpty()
+        temp = stack.pop() // try to empty stack and push elements to tempStack
+        while (!tempStack.isEmpty() and tempStack.peek() > temp) // tempStack holds less value if greater is there it should be in stack
+            stack.push(tempStack.pop())
+        tempStack.push(temp)
+    //tempStack -> [1,2,3,4,5]
+    //stack -> []
+    while (!tempStack.isEmpty())
+        stack.push(tempStack.pop())
+    //stack -> [5,4,3,2,1] 
